@@ -324,7 +324,7 @@
         yum insatll tshark
         ```
 
-    ![2](chap0x02/img2/error-tsharkinstall.png)
+    ![2](img2/error-tsharkinstall.png)
 
 
 - 解决方法：
