@@ -132,7 +132,7 @@
     cat purpose
     ```
     
-    ![2](chap0x02/img2/touchpurpose.png)
+    ![2](img2/touchpurpose.png)
 
 
 - CenOS:
@@ -334,7 +334,7 @@
         yum whatprovides *tshark*
         ```
 
-    ![2](chap0x02/img2/error-findtshark.png)
+    ![2](img2/error-findtshark.png)
 
     本次实验中选择安装wireshark安装包。
 
@@ -343,7 +343,7 @@
 - 问题：
     在采用`yum install p7zip`安装p7zip软件包之后，发现无法使用命令进行压缩。
 
-    ![2](chap0x02/img2/7zipinstall.png)
+    ![2](img2/7zipinstall.png)
 
 - 解决方法：
     CentOS安装p7zip-plugins，Ubuntu安装p7zip-full
@@ -356,7 +356,7 @@
         wget https://www.rarlab.com/rar/rarlinux-x64-611.tar.gz
         ```
 
-    ![2](chap0x02/img2/rarinstall.png)
+    ![2](img2/rarinstall.png)
 
 
 - 解决方法：
@@ -367,7 +367,7 @@
 - 问题：
     在Ubuntu中查询tmp目录及子目录下内容含有“666”的文件时，除了目标文件外出现很多带有.cast的乱码文件。
 
-    ![2](chap0x02/img2/cast.png)
+    ![2](img2/cast.png)
 
 
 
