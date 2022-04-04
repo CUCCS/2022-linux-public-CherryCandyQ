@@ -558,7 +558,11 @@
         [![asciicast](https://asciinema.org/a/482205.svg)](https://asciinema.org/a/482205)
         
    * 利用`groups test`或`getent group sudo`验证正确。
+
+
         ![2](img3/sudotest.png)
+        
+        
 
    ##### 2.将一个用户添加到一个用户组 
    * 相似，创建一个用户test1，并将它加入到root组。
@@ -638,7 +642,10 @@
       ![2](img3/check.png)
     
    * 视频链接：
+
+
       [![asciicast](https://asciinema.org/a/482848.svg)](https://asciinema.org/a/482848)
+      
 
     ##### 5. 基于LVM（逻辑分卷管理）的分区如何实现动态扩容和缩减容量
     * 先查看磁盘信息、存在的pv和pv的详细信息。
