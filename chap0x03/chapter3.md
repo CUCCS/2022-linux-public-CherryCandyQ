@@ -812,7 +812,10 @@
 
     ##### 5.基于LVM（逻辑分卷管理）的分区如何实现动态扩容和缩减容量
     * 在创建pv过程中，出现报错“ Can't open /dev/sda2 exclusively.  Mounted filesystem?”
+   
     ![2](img3/pvcreate.png)
+    
+    
     查询后是因为分区文件正在使用，需要用`umount`命令解决。
 
     
