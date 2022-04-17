@@ -38,7 +38,7 @@ script:
   - bash change_img.sh -d image_before/ -w "star"
   - bash change_img.sh -d image_before/ -p "pre"
   - bash change_img.sh -d image_before/ -s "suf"
-  - bash change_img.sh -d img_before/ -c 100
+  - bash change_img.sh -d img_before/ -c
   - shellcheck change_img.sh
 notifications:
   email:
