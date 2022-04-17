@@ -8,19 +8,10 @@ before_install:
  - wget "https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/worldcupplayerinfo.tsv"
  - wget "https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/web_log.tsv.7z"
 script:
- - ls -l
  - 7z x web_log.tsv.7z
+ - ls -l
  - cd chap0x04/
  - cd code/
- - echo ":========================= 1 ===========================:"
- - shellcheck change_image.sh
- - bash change_image.sh -h
- - bash change_img.sh -d image_before/ -q 50%
- - bash change_img.sh -d image_before/ -r 80
- - bash change_img.sh -d image_before/ -w "star"
- - bash change_img.sh -d image_before/ -p "pre"
- - bash change_img.sh -d image_before/ -s "suf"
- - bash change_img.sh -d img_before/ -c 100
  - echo ":========================= 2 ===========================:"
  - shellcheck task2.sh
  - bash player.sh -h
