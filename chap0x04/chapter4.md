@@ -38,6 +38,8 @@
 - [x] 给定URL输出TOP 100访问来源主机
 ---
 ### 问题解答
+##### !可以点击我的Travis[![Build Status](https://app.travis-ci.com/CUCCS/2022-linux-public-CherryCandyQ.svg?branch=chap0x04)](https://app.travis-ci.com/CUCCS/2022-linux-public-CherryCandyQ)查看详情。
+
 ##### 1.用bash编写一个图片批处理脚本
 - 代码如下：
   [change_img.sh](code/change_img.sh)
@@ -85,7 +87,9 @@
     bash change_img.sh -d img_before/ -c 100
     ```
 
-  - 结果；
+  - 结果:
+  
+
     ![2](homework_image/results.png)
 
 
@@ -110,6 +114,8 @@
     -h or --help          : Print Help (this message) and exit.                                    
     ```
 - 视频链接：
+
+
   [![asciicast](https://asciinema.org/a/487563.svg)](https://asciinema.org/a/487563)
 
 
@@ -164,13 +170,16 @@
     -h                 帮助文档
     ```
 - 视频链接：
+
+
    [![asciicast](https://asciinema.org/a/SWYKUZuJreQDTS1WExNzb476v.svg)](https://asciinema.org/a/SWYKUZuJreQDTS1WExNzb476v)
+
 
 ##### 2-2. Web服务器访问日志
 
 - 数据和代码如下:
   - [web_log.tsv.7z](web_log.tsv.7z)
-  * [blog.sh](code/blog.sh)
+  - [blog.sh](code/blog.sh)
 
 
 - 过程
@@ -179,7 +188,9 @@
     sudo apt-get install 7zip-full
     7z x web_log.tsv.7z
     ```
+    
     ![2](homework_image/7zip.png)
+  
   
   - 用vscode-remote连接虚拟机，编写blog.sh文件
   - 测试：
@@ -206,6 +217,8 @@
     bash blog.sh -s  /elv/SCOUT/scout.gif
     ```
   - 结果：
+
+
     [2-2结果](task2-2_results.md)
 
   - help帮助文档：
@@ -225,11 +238,15 @@
     -h      帮助文档
     ```
 - 视频链接：
+
+
   [![asciicast](https://asciinema.org/a/pOjmLtVbvFET4uLCpJTWjPAx0.svg)](https://asciinema.org/a/pOjmLtVbvFET4uLCpJTWjPAx0)
 
 ----
 ### 问题与解决方案：
 - 问题： 在给定URL输出TOP 100访问来源主机时，用输入`baidu.com`并没有得到任何结果。
+
+
    ![2](homework_image/wrong.png)
 
 - 解决方法：应该从给定数据中挑选url,比如在统计不同4XX状态码对应的TOP 10 URL和对应出现的总次数时出现的`/elv/SCOUT/scout.gif`即可得到结果。
