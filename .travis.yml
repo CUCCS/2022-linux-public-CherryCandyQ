@@ -12,14 +12,23 @@ script:
   - ls -l
   - cd chap0x04/  
   - cd code/ 
-  - echo "=============================="
+  - echo "==============1================"
+  - echo change_image
+  - bash change_image.sh -h
+  - bash change_img.sh -d image_before/ -q 50%
+  - bash change_img.sh -d image_before/ -r 80
+  - bash change_img.sh -d image_before/ -w "star"
+  - bash change_img.sh -d image_before/ -p "pre"
+  - bash change_img.sh -d image_before/ -s "suf"
+  - bash change_img.sh -d img_before/ -c 100
+  - echo "==============2==============="
   - echo player
   - bash player.sh -h
   - bash player.sh -s 
   - bash player.sh -p 
   - bash player.sh -n 
   - bash player.sh -a 
-  - echo "=============================="
+  - echo "===============3==============="
   - echo blog
   - bash blog.sh -h
   - bash blog.sh -o 
