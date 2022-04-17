@@ -38,7 +38,8 @@
 - [x] 给定URL输出TOP 100访问来源主机
 ---
 ### 问题解答
-##### !可以点击我的Travis[![Build Status](https://app.travis-ci.com/CUCCS/2022-linux-public-CherryCandyQ.svg?branch=chap0x04)](https://app.travis-ci.com/CUCCS/2022-linux-public-CherryCandyQ)查看详情。
+
+##### !代码情况可以点击我的Travis[![Build Status](https://app.travis-ci.com/CUCCS/2022-linux-public-CherryCandyQ.svg?branch=chap0x04)](https://app.travis-ci.com/CUCCS/2022-linux-public-CherryCandyQ)查看详情。
 
 ##### 1.用bash编写一个图片批处理脚本
 - 代码如下：
@@ -263,3 +264,5 @@
 - [convert-linux-command-unix-command](https://www.lifewire.com/convert-linux-command-unix-command-4097060)
 - [cenvert与mogrify的简单使用](https://www.jianshu.com/p/85a86b45c9ed)
 - [Linux awk 命令](https://www.runoob.com/linux/linux-comm-awk.html)
+- [上传文件显示被隐藏](https://blog.csdn.net/weixin_46211269/article/details/116425133)
+- [Travis使用说明](https://github.com/steveklabnik/automatically_update_github_pages_with_travis_example)
