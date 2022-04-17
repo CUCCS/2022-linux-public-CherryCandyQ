@@ -154,7 +154,7 @@
     bash player.sh -a
     ```
   - 结果：
-    [2-1结果](task2_results.md)
+    [2-1结果](task2-1_results.md)
 
   - help帮助文档：
     ```shell
