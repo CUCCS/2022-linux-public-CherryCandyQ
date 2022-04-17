@@ -12,15 +12,6 @@ script:
   - ls -l
   - cd chap0x04/  
   - cd code/ 
-  - echo "==============1================"
-  - echo change_image
-  - bash change_image.sh -h
-  - bash change_img.sh -d image_before/ -q 50%
-  - bash change_img.sh -d image_before/ -r 80
-  - bash change_img.sh -d image_before/ -w "star"
-  - bash change_img.sh -d image_before/ -p "pre"
-  - bash change_img.sh -d image_before/ -s "suf"
-  - bash change_img.sh -d img_before/ -c 100
   - echo "==============2==============="
   - echo player
   - bash player.sh -h
@@ -28,6 +19,7 @@ script:
   - bash player.sh -p 
   - bash player.sh -n 
   - bash player.sh -a 
+  - shellcheck player.sh
   - echo "===============3==============="
   - echo blog
   - bash blog.sh -h
@@ -37,8 +29,17 @@ script:
   - bash blog.sh -c 
   - bash blog.sh -f 
   - bash blog.sh -s /elv/SCOUT/scout.gif
-  - shellcheck player.sh
   - shellcheck blog.sh
+  - echo "==============1================"
+  - echo change_image
+  - bash change_img.sh -h
+  - bash change_img.sh -d image_before/ -q 50%
+  - bash change_img.sh -d image_before/ -r 80
+  - bash change_img.sh -d image_before/ -w "star"
+  - bash change_img.sh -d image_before/ -p "pre"
+  - bash change_img.sh -d image_before/ -s "suf"
+  - bash change_img.sh -d img_before/ -c 100
+  - shellcheck change_img.sh
 notifications:
   email:
     on_success: never
