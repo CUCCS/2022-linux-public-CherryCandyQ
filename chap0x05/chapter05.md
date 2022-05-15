@@ -57,7 +57,11 @@
     192.168.56.101 dvwa.sec.cuc.edu.cn
     192.168.56.101 wp.sec.cuc.edu.cn
     ```
+    
+    
     ![2](img/hosts_add.png)
+    
+    
 ###### 1.Nginx
 
 - 安装Nginx
@@ -77,7 +81,11 @@
     sudo nginx -s reload  
     ```
 - 在主机输入：`http://192.168.56.101:8080`,访问成功。
+
+
     ![2](/img/apt_nginx.png)
+    
+    
 - PHP-FPM进程的反向代理
   - 安装php
     ```shell
@@ -135,12 +143,20 @@
     sudo /opt/verynginx/openresty/nginx/sbin/nginx
     ```
 - 输入`http://192.168.56.101`,成功连接。
+
+
     ![2](img/verynginx_open.png)
+    
 
 - 在主机输入`http://192.168.56.101:80/verynginx/index.html`,出现登录界面。
+
+
     ![2](img/apt_verynginx.png)
+    
 
 - 以用户名：`verynginx` 密码：`verynginx`登入。
+
+
     ![2](img/verynginx_log_in.png)
 
 
@@ -193,7 +209,11 @@
       sudo vim wp-config-sample.php
       ```
   - 修改内容
+
+
     ![2](img/change.png)
+    
+    
   - 修改文件名
       ```shell
       sudo mv wp-config-sample.php wp-config.php
@@ -232,9 +252,16 @@
     sudo systemctl restart nginx
     ```
 - 输入链接，成功显示初始页面
+
+
     ![2](img/apt_wordpress.png)
+    
+    
 - 创建用户(makebetter)，成功登录
+
+
     ![2](img/wordpress_log_in.png)
+    
 
 ###### 4.DVWA
 - 安装DVWA
@@ -321,9 +348,16 @@
     sudo systemctl restart nginx
     ```
 - 输入链接，成功显示登录页面，使用用户名：`dvwa` 密码：`p@ssw0rd`即可登入。
+
+
     ![2](img/dvwa_login.png)
+    
+    
 - 登入之后，点击页面下方的`Create/Reset Database`生成需要使用的数据库。如果数据库连接成功，页面会直接重定向到登录页面，此时使用用户名：`admin` 密码：`password`登录
+
+
     ![2](img/dvwa_success.png)
+    
 
 ###### 5.通过verynginx配置WordPress和DVWA
 - Wordpress
@@ -333,7 +367,10 @@
     ![2](img/wp_upstream.png)
   - Proxy Pass
     ![2](img/wp_proxypass.png)
+    
+    
 ![2](img/wp_success.png)
+
 
 - DVWA
   - Matcher
@@ -342,7 +379,10 @@
     ![2](img/dvwa_backend.png)
   - Proxy Pass
     ![2](img/dvwa_proxypass.png)
+    
+    
 ![2](img/dvwa_success.png)
+
 
 ##### 安全加固要求
 ###### 1. 使用IP地址方式均无法访问上述任意站点，并向访客展示自定义的友好错误提示信息页面-1
@@ -359,7 +399,10 @@
 - Filter
   ![2](img/ip_filter.png)
 - 测试结果
+
+
   ![2](img/-1_response.png)
+  
 
 ###### 2. Damn Vulnerable Web Application (DVWA)只允许白名单上的访客来源IP，其他来源的IP访问均向访客展示自定义的友好错误提示信息页面-2
 
@@ -372,9 +415,16 @@
   ![2](img/ip_-2_filter.png)
 - 测试结果
   - 使用其他来源的IP访问
+
+
     ![2](img/-2_response.png)
+    
+    
   - 使用白名单上的访客来源IP访问
+
+
     ![2](img/not_-2.png)
+    
 
 ###### 3. 在不升级Wordpress版本的情况下，通过定制VeryNginx的访问控制策略规则，热修复WordPress < 4.7.1 - Username Enumeration
 - 访问[WordPress < 4.7.1 - Username Enumeration](https://www.exploit-db.com/exploits/41497/),制定方案。
@@ -383,11 +433,17 @@
 - Filter
   ![2](img/wp_repair_filter.png)
 - 测试结果
+
+
   ![2](img/wp_response.png)
+  
 
 ###### 4. 通过配置VeryNginx的Filter规则实现对Damn Vulnerable Web Application (DVWA)的SQL注入实验在低安全等级条件下进行防护
 - 登录DVWA，选择DVWA Security，把Security Level置为Low，点击submit
+
+
   ![2](img/set_low.png)
+  
 - 选择sql injection，输入`'union select 1,database();## -a'`进行sql注入。
   ![2](img/sql_injection.png)
 - Mathcer
@@ -397,7 +453,10 @@
 - Filter
   ![2](img/sql_filter.png)
 - 测试结果
+
+
   ![2](img/sql_done.png)
+
 
 ##### VeryNginx配置要求
 ###### 1. VeryNginx的Web管理页面仅允许白名单上的访客来源IP，其他来源的IP访问均向访客展示自定义的友好错误提示信息页面-3
@@ -409,9 +468,16 @@
   ![2](img/vn_filter.png)
 - 测试结果
   - 用其他来源的IP访问
+
+
     ![2](img/vn_done.png)
+    
+    
   - 用白名单上的访客来源IP访问
+
+
     ![2](img/vn_white_list.png)
+
 
 ###### 2.通过定制VeryNginx的访问控制策略规则实现：
 
@@ -423,7 +489,11 @@
   ![2](img/frequency_limit.png)
 - 超过访问频率限制的请求直接返回自定义错误提示信息页面-4
   - 手动测试结果：
+
+
     ![2](img/fast.png)
+    
+    
   - 利用apache自带的压力测试工具ab进行检查
       ```shell
       sudo apt update
@@ -433,11 +503,17 @@
         ```shell
         ab -n 100 http://dvwa.sec.cuc.edu.cn/
         ```
+        
+        
         ![2](img/dvwa_ab.png)
+        
+        
       - 测试`wp.sec.cuc.edu.cn`
         ```shell
         ab -n 100 http://wp.sec.cuc.edu.cn/
         ```
+        
+        
         ![2](img/wp_ab.png)
       
 - 禁止curl访问
@@ -448,7 +524,10 @@
   - Filter
   ![2](img/curl_filter.png)
   - 测试结果
+
+
   ![2](img/curl_done.png)
+
 
 -----
 ### 错误和解决方案
@@ -470,7 +549,11 @@
 
 ###### 3.80端口报错
 - 问题：在重启nginx后，显示80窗口被占用。
+
+
   ![2](img/wrong_80.png)
+  
+  
 - 解决方案：直接暴力解决，然后可以重新启动。
 - 采用代码：
     ```shell
@@ -480,7 +563,11 @@
 
 ###### 4.执行`ab -n 100 http://wp.sec.cuc.edu.cn/`报错
 - 问题：显示Name or service not known (670002)
+
+
   ![2](img/wrong_ab.png)
+  
+  
 - 解决方案：没有更改虚拟机的hosts。
 - 采用代码:
     ```shell
