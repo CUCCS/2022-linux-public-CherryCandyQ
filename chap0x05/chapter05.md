@@ -83,7 +83,7 @@
 - 在主机输入：`http://192.168.56.101:8080`,访问成功。
 
 
-    ![2](/img/apt_nginx.png)
+    ![2](img/apt_nginx.png)
     
     
 - PHP-FPM进程的反向代理
@@ -367,9 +367,9 @@
     ![2](img/wp_upstream.png)
   - Proxy Pass
     ![2](img/wp_proxypass.png)
+  - 成功登陆
     
-    
-![2](img/wp_success.png)
+    ![2](img/wp_success.png)
 
 
 - DVWA
@@ -379,9 +379,10 @@
     ![2](img/dvwa_backend.png)
   - Proxy Pass
     ![2](img/dvwa_proxypass.png)
+  - 成功登陆
     
     
-![2](img/dvwa_success.png)
+    ![2](img/dvwa_success.png)
 
 
 ##### 安全加固要求
